@@ -24,7 +24,7 @@
 }
 /* sidemenu */
 .sidemenu {
-  background-color: #212529;
+  /* background-color: #212529;
   width: 140px;
   height: 100vh;
   color: white;
@@ -32,7 +32,8 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding-bottom: 30px;
+  padding-bottom: 30px; */
+  display: none;
 }
 .sidemenu p {
   text-align: left;
@@ -69,6 +70,7 @@
 }
 @media only screen and (max-width: 600px) {
   .sidemenu {
+    display: block;
     background-color: #212529;
     width: 140px;
     height: 100vh;
