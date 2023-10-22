@@ -88,7 +88,7 @@
     width: 30px;
     padding-right: 2px;
     position: absolute;
-    top: 99px;
+    top: 115px;
     left: 90px;
     color: white;
     z-index: 1;
@@ -108,12 +108,12 @@
     position: absolute;
   }
   .toggle1 {
-    top: 95px;
+    top: 110px;
     transition: 0.4s;
   }
   .toggle2 {
-    top: -720px;
-    transition: 0.4s;
+    top: -1150px;
+    transition: 0.6s;
   }
   .dropdown {
     margin-bottom: 50px;
