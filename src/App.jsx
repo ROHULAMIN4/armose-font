@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 import "./App.css";
+
 import Header from "./component/Header/Header";
-import Menubar from "./component/Header/Menubar/Menubar";
-import Shop from "./component/Header/Shop/Shop";
+import Menubar from "./component/Menubar/Menubar";
+
+import Shop from "./component/Shop/Shop";
 
 function App() {
   return (

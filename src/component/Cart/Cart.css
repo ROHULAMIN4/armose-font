@@ -1,0 +1,7 @@
+.cart {
+  background-color: rgb(216, 217, 218);
+  box-shadow: 2px 2px 1px gray;
+  padding: 5px;
+  position: sticky;
+  top: 68px;
+}

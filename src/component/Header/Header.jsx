@@ -2,9 +2,11 @@ import React from "react";
 import "./Header.css";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import { Col, Row, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
 const Header = () => {
   return (
-    <Container fluid>
+    <Container fluid className="top-header">
       <Row className="parent-header">
         <Col xs={12} md={6} lg={6} className="logo">
           <p>
@@ -25,6 +27,11 @@ const Header = () => {
               <button className="btn btn-outline-success mt-2" type="submit">
                 Search
               </button>
+
+              {/* <Link to="/menucart">
+                <Cart></Cart>
+              </Link> */}
+
               <span className="card-icon">
                 <ShoppingCartIcon className="cart-icon" />
               </span>
