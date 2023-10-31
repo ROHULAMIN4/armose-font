@@ -7,6 +7,7 @@ import {
   ArchiveBoxIcon,
   Bars3Icon,
   XMarkIcon,
+  ArrowPathIcon,
 } from "@heroicons/react/24/solid";
 
 const Menubar = () => {
@@ -32,11 +33,14 @@ const Menubar = () => {
           {" "}
           <HomeIcon className="menuicon "></HomeIcon>Home
         </Link>
-        <Link to="/offer">
-          <BriefcaseIcon className="menuicon"></BriefcaseIcon> Offer
+        <Link to="/offers">
+          <BriefcaseIcon className="menuicon"></BriefcaseIcon> Offers
         </Link>
         <Link to="/products">
           <ArchiveBoxIcon className="menuicon"></ArchiveBoxIcon> Products
+        </Link>
+        <Link to="/orders">
+          <ArrowPathIcon className="menuicon"></ArrowPathIcon> Orders
         </Link>
       </div>
       {/* side menu */}
@@ -49,11 +53,14 @@ const Menubar = () => {
               <HomeIcon className="menuicon "></HomeIcon>Home
             </Link>
 
-            <Link to="/offer">
-              <BriefcaseIcon className="menuicon"></BriefcaseIcon>Offer
+            <Link to="/offers">
+              <BriefcaseIcon className="menuicon"></BriefcaseIcon>Offers
             </Link>
             <Link to="">
               <ArchiveBoxIcon className="menuicon"></ArchiveBoxIcon>Products
+            </Link>
+            <Link to="/orders">
+              <ArrowPathIcon className="menuicon"></ArrowPathIcon>Orders
             </Link>
           </div>
 

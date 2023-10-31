@@ -28,13 +28,11 @@ const Header = () => {
                 Search
               </button>
 
-              {/* <Link to="/menucart">
-                <Cart></Cart>
-              </Link> */}
-
-              <span className="card-icon">
-                <ShoppingCartIcon className="cart-icon" />
-              </span>
+              <Link to="/menucart">
+                <span className="card-icon">
+                  <ShoppingCartIcon className="cart-icon" />
+                </span>
+              </Link>
             </form>
           </div>
         </Col>
