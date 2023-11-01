@@ -1,0 +1,35 @@
+.review-item {
+  width: 571px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+.review-item img {
+  height: 91px;
+  width: 91px;
+}
+.review-item p {
+  margin: 0px 15px;
+}
+.review-details {
+  flex-grow: 1;
+}
+.review-productname {
+  font-weight: 700;
+  font-family: "Times New Roman", Times, serif;
+}
+.review-price {
+  color: tomato;
+}
+.reviewClose-button {
+  height: 51px;
+  width: 51px;
+  border-radius: 50%;
+  background-color: rgba(235, 87, 87, 0.3);
+  color: rgba(255, 4, 4, 0.506);
+  border: 1px solid gray;
+}
+/*  */
