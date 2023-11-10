@@ -5,3 +5,20 @@
   position: sticky;
   top: 68px;
 }
+.clear-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 5px auto;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+.clear-btn:hover {
+  background-color: rgb(134, 134, 134);
+  transition: 0.5s;
+  color: white;
+}
+.clear-icon {
+  width: 30px;
+  color: rgba(255, 69, 7, 0.766);
+}

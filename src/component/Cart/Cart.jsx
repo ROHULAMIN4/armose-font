@@ -1,8 +1,8 @@
 import React from "react";
 import "./Cart.css";
 import Table from "react-bootstrap/Table";
-
-const Cart = ({ cart }) => {
+import { TrashIcon } from "@heroicons/react/24/solid";
+const Cart = ({ cart, HandleClearCart }) => {
   // console.log(cart.length);
   let totall = 0;
   let totallShipping = 0;
@@ -40,6 +40,10 @@ const Cart = ({ cart }) => {
             </h5>
           </tbody>
         </Table>
+        <button onClick={HandleClearCart} className="clear-btn">
+          <span>Clear Cart</span>
+          <TrashIcon className="clear-icon"></TrashIcon>
+        </button>
       </div>
       {/* <MobileDevideCart cart={cart}></MobileDevideCart> */}
     </>

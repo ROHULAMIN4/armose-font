@@ -1,7 +1,7 @@
 import React from "react";
 import "./Review.css";
 import { TrashIcon } from "@heroicons/react/24/solid";
-const ReviewProducts = ({ products }) => {
+const ReviewProducts = ({ products, handleRemoveFromCart }) => {
   const { id, img, name, quantity, price } = products;
   return (
     <div className="review-item">
@@ -18,7 +18,10 @@ const ReviewProducts = ({ products }) => {
           </span>{" "}
         </p>
       </div>
-      <button className="reviewClose-button">
+      <button
+        onClick={() => handleRemoveFromCart(id)}
+        className="reviewClose-button"
+      >
         <TrashIcon></TrashIcon>
       </button>
     </div>

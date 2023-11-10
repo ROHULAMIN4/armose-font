@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import { addToDb, getShoppingCart } from "../../utilities/fakedb";
+import {
+  addToDb,
+  deleteShoppingCart,
+  getShoppingCart,
+} from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 
 import Product from "../Product/Product";
@@ -41,6 +45,10 @@ const Shop = () => {
     setCart(newCart);
     addToDb(product.id);
   };
+  const HandleClearCart = () => {
+    setCart([]);
+    deleteShoppingCart();
+  };
   return (
     <>
       <Container fluid>
@@ -55,7 +63,11 @@ const Shop = () => {
             ))}
           </div>
           <div className="orderSummary">
-            <Cart cart={cart} key={cart.id}></Cart>
+            <Cart
+              cart={cart}
+              HandleClearCart={HandleClearCart}
+              key={cart.id}
+            ></Cart>
           </div>
         </div>
       </Container>
