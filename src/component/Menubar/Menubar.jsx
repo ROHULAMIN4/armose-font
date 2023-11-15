@@ -24,7 +24,7 @@ const Menubar = () => {
           {open ? (
             <XMarkIcon className="menuicon1"></XMarkIcon>
           ) : (
-            <Bars3Icon className="menuicon"></Bars3Icon>
+            <Bars3Icon className="menuicon-topbar"></Bars3Icon>
           )}
         </span>
       </div>

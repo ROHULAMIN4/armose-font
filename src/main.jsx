@@ -11,6 +11,7 @@ import Cart from "./component/Cart/Cart.jsx";
 import Orders from "./component/Orders/Orders.jsx";
 import Product from "./component/Product/Product.jsx";
 import cartProductLoder from "./cartProductLoder.js";
+import ReviewProducts from "./component/ReviewProducts/ReviewProducts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "offers",
         element: <Offer></Offer>,
+      },
+      {
+        path: "revireItem",
+        element: <Orders></Orders>,
       },
       {
         path: "orders",

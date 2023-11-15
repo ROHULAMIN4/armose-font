@@ -6,6 +6,7 @@ import {
   getShoppingCart,
 } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
+import Header from "../Header/Header";
 
 import Product from "../Product/Product";
 import "./Shop.css";
@@ -71,6 +72,7 @@ const Shop = () => {
           </div>
         </div>
       </Container>
+      <Header cart={cart.length}></Header>
     </>
   );
 };

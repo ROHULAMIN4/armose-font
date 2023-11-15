@@ -14,7 +14,7 @@ const cartProductLoder = async () => {
       const quantity = storeCart[id];
       addedProducts.quantity = quantity;
       saveCart.push(addedProducts);
-      console.log(quantity);
+      // console.log(quantity);
     }
   }
   // console.log(saveCart);
