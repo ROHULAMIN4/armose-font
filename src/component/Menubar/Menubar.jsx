@@ -14,7 +14,8 @@ import { AuthContex } from "../provider/AuthProver";
 
 const Menubar = () => {
   const { user, logOut } = useContext(AuthContex);
-  console.log(user);
+  // const photo = user.photoURL;
+  // console.log(photo);
   const [open, setOpen] = useState(false);
   const handleLogOut = () => {
     logOut()
@@ -56,14 +57,20 @@ const Menubar = () => {
           </div>
           <div className="profileMenu">
             {user ? (
-              <img
-                className="profile-img"
-                src="https://github.com/mdo.png"
-                alt=""
-                width="32"
-                height="32"
-                class="rounded-circle me-2"
-              />
+              <Link to="/setting">
+                <img
+                  className="profile-img"
+                  src={
+                    user.photoURL
+                      ? user.photoURL
+                      : "https://i.postimg.cc/BnwKBd7L/pngtree-cartoon-color-simple-male-avatar-png-image-1934459.jpg"
+                  }
+                  alt=""
+                  width="32"
+                  height="32"
+                  class="rounded-circle me-2"
+                />
+              </Link>
             ) : (
               <Link to="/login">
                 <UserPlusIcon className="menuicon"></UserPlusIcon> Login

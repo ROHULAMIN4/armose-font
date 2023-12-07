@@ -12,7 +12,7 @@ import { useContext } from "react";
 import { AuthContex } from "../provider/AuthProver";
 import { useState } from "react";
 const Login = () => {
-  const { signin, user } = useContext(AuthContex);
+  const { signin, user, googleSingIn, githubSignIn } = useContext(AuthContex);
   console.log(user);
   const [show, setShow] = useState(false);
   const nativate = useNavigate();
@@ -36,7 +36,28 @@ const Login = () => {
         setError(error.message);
       });
   };
-
+  const handleGoogleSingIn = () => {
+    googleSingIn()
+      .then((result) => {
+        const loggUser = result.user;
+        console.log(loggUser);
+      })
+      .catch((error) => {
+        alert(error.message);
+        setError(error.message);
+      });
+  };
+  const handleGithubSIngIn = () => {
+    githubSignIn()
+      .then((result) => {
+        const loggUser = result.user;
+        console.log(loggUser);
+      })
+      .catch((error) => {
+        alert(error.message);
+        setError(error.message);
+      });
+  };
   return (
     <div className="main-login-form">
       <img class="wave" src="img/wave.png" />
@@ -48,6 +69,14 @@ const Login = () => {
           <form onSubmit={haldleLogin}>
             <img src="img/avatar.svg" />
             <h2 class="title">Welcome</h2>
+            <div className="socialLoginLogo">
+              <button onClick={handleGithubSIngIn}>
+                <img src="img/github.png" alt="" />
+              </button>
+              <button onClick={handleGoogleSingIn}>
+                <img src="img/google.jpg" alt="" />
+              </button>
+            </div>
 
             <div class="input-div one">
               <div class="i">

@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 import AuthProver, { AuthContex } from "../provider/AuthProver";
 const SignUp = () => {
   const [error, setError] = useState("");
-  const { createUser } = useContext(AuthContex);
+  const { createUser, googleSingIn, githubSignIn } = useContext(AuthContex);
   const handleSingUp = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -50,6 +50,28 @@ const SignUp = () => {
         setError(error.message);
       });
   };
+  const handleGoogleSingIn = () => {
+    googleSingIn()
+      .then((result) => {
+        const loggUser = result.user;
+        console.log(loggUser);
+      })
+      .catch((error) => {
+        alert(error.message);
+        setError(error.message);
+      });
+  };
+  const handleGithubSIngIn = () => {
+    githubSignIn()
+      .then((result) => {
+        const loggUser = result.user;
+        console.log(loggUser);
+      })
+      .catch((error) => {
+        alert(error.message);
+        setError(error.message);
+      });
+  };
   return (
     <div>
       <div className="main-login-form">
@@ -62,6 +84,14 @@ const SignUp = () => {
             <form onSubmit={handleSingUp}>
               <img src="img/avatar.svg" />
               <h2 className="title">Welcome</h2>
+              <div className="socialLoginLogo">
+                <button onClick={handleGithubSIngIn}>
+                  <img src="img/github.png" alt="" />
+                </button>
+                <button onClick={handleGoogleSingIn}>
+                  <img src="img/google.jpg" alt="" />
+                </button>
+              </div>
 
               <div className="input-div one">
                 <div className="i">

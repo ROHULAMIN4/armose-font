@@ -179,7 +179,20 @@ form {
 .btn:hover {
   background-position: right;
 }
-
+.socialLoginLogo {
+  box-shadow: 2px 2px 2px rgb(218, 213, 213);
+}
+.socialLoginLogo img {
+  width: 50px;
+  height: 50px;
+}
+.socialLoginLogo button {
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  box-shadow: 2px 2px 3px gray;
+  border-radius: 10px;
+}
 @media screen and (max-width: 1050px) {
   .login-container {
     grid-gap: 5rem;
