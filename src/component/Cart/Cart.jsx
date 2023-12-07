@@ -3,7 +3,7 @@ import "./Cart.css";
 import Table from "react-bootstrap/Table";
 import { TrashIcon } from "@heroicons/react/24/solid";
 
-const Cart = ({ cart, HandleClearCart }) => {
+const Cart = ({ cart, HandleClearCart, children }) => {
   let totall = 0;
   let totallShipping = 0;
   for (const product of cart) {
@@ -44,6 +44,7 @@ const Cart = ({ cart, HandleClearCart }) => {
           <span>Clear Cart</span>
           <TrashIcon className="clear-icon"></TrashIcon>
         </button>
+        {children}
       </div>
     </>
   );

@@ -1,0 +1,67 @@
+.setting {
+  width: 100%;
+}
+.setting-menu {
+  padding-top: 20px;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  padding-left: 10px;
+}
+.cover-setting {
+  background-color: #002e25;
+  width: 100vw;
+  height: 100vh;
+}
+.setting-menu a {
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+}
+.seetingmenuicon {
+  width: 20px;
+  padding-right: 2px;
+  z-index: 1;
+}
+.setting-menu a:hover {
+  transition: 0.2s;
+  background-image: linear-gradient(to right, #74e4bf, #0b2b64, #1ada9a);
+}
+.signout {
+  padding: 10px 2px;
+  border-radius: 25px;
+  width: 150px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+.profile-img {
+  border-radius: 50%;
+}
+.heding-armose {
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 30px;
+  font-weight: 600;
+}
+.signout:hover {
+  background-image: linear-gradient(to right, #74e4bf, #0b2b64, #1ada9a);
+}
+.settingEmail {
+  color: whitesmoke;
+  font-size: 15px;
+}
+.dropdown {
+  margin-bottom: 50px;
+}
+
+/* start custom menu here */

@@ -5,18 +5,18 @@ import { Col, Row, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Header = ({ cart }) => {
-  console.log(cart);
+  // console.log(cart);
   return (
-    <Container fluid className="top-header">
-      <Row className="parent-header">
-        <Col xs={12} md={6} lg={6} className="logo">
+    <div className="top-header">
+      <div className="parent-header">
+        <div xs={12} md={6} lg={6} className="logo">
           <p>
             <img src="https://i.postimg.cc/3JjVhCBx/ml1.png" alt="" />
             <span className="L1">ARM</span>
             <span className="L2">OSE</span>
           </p>
-        </Col>
-        <Col xs={12} md={6} lg={6} className="child-header">
+        </div>
+        <div className="child-header">
           <div className="form">
             <form class="d-flex pt-2" role="search">
               <input
@@ -37,9 +37,9 @@ const Header = ({ cart }) => {
               </Link>
             </form>
           </div>
-        </Col>
-      </Row>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 

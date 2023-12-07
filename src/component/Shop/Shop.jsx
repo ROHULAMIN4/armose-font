@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import {
   addToDb,
   deleteShoppingCart,
@@ -64,11 +66,17 @@ const Shop = () => {
             ))}
           </div>
           <div className="orderSummary">
-            <Cart
-              cart={cart}
-              HandleClearCart={HandleClearCart}
-              key={cart.id}
-            ></Cart>
+            <Cart cart={cart} HandleClearCart={HandleClearCart} key={cart.id}>
+              <Link style={{ textDecoration: "none" }} to="/orders">
+                <button className="review-btn">
+                  Review Orders
+                  <ArrowRightIcon
+                    style={{ color: "white" }}
+                    className="clear-icon"
+                  ></ArrowRightIcon>
+                </button>
+              </Link>
+            </Cart>
           </div>
         </div>
       </Container>

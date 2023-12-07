@@ -12,6 +12,7 @@
   margin: 5px auto;
   border: 1px solid white;
   border-radius: 3px;
+  padding: 10px 5px;
 }
 .clear-btn:hover {
   background-color: rgb(134, 134, 134);

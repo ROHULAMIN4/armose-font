@@ -1,9 +1,16 @@
 .menubar {
   background-color: rgb(5, 51, 81);
   padding: 5px;
+  margin-top: 66px;
   padding-left: 50px;
   position: sticky;
   top: 0px;
+  display: block;
+}
+.parentMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .menubar a {
   text-decoration: none;
@@ -81,33 +88,38 @@
     justify-content: space-between;
     flex-direction: column;
     padding-bottom: 30px;
+    z-index: 1;
   }
   .menubar {
     display: block;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-top: 115px;
     position: sticky;
     top: 0px;
+    z-index: 1;
   }
   .menubar a {
     text-decoration: none;
     padding-left: 2px;
-    padding-right: 15px;
+    padding-right: 12px;
 
     font-weight: 600;
     color: white;
-    font-size: 10px;
+    font-size: 7px;
     margin-left: 0px;
+    z-index: 1;
   }
   .menuicon {
     width: 20px;
     padding-right: 2px;
+    z-index: 1;
   }
   .menuicon1 {
     width: 30px;
     padding-right: 2px;
     position: absolute;
-    top: 115px;
+    top: 170px;
     left: 90px;
     color: white;
     z-index: 1;
@@ -115,6 +127,7 @@
     padding: 1px;
     border-radius: 1px;
     transition: 0.5s;
+    display: block;
   }
   .menuicon1:hover {
     background-color: #212529;
@@ -135,7 +148,7 @@
     transition: 0.6s;
   }
   .dropdown {
-    margin-bottom: 50px;
+    display: inline;
   }
   /* start custom menu here */
 }
