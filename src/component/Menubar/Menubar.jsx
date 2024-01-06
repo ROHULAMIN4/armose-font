@@ -24,7 +24,7 @@ const Menubar = () => {
   };
   return (
     <>
-      <div
+      {/* <div
         onClick={() => {
           setOpen(!open);
         }}
@@ -37,7 +37,7 @@ const Menubar = () => {
             <Bars3Icon className="menuicon-topbar"></Bars3Icon>
           )}
         </span>
-      </div>
+      </div> */}
 
       <div className="menubar">
         <div className="parentMenu">
@@ -46,13 +46,13 @@ const Menubar = () => {
               <HomeIcon className="menuicon "></HomeIcon>Home
             </Link>
             <Link to="/offers">
-              <BriefcaseIcon className="menuicon"></BriefcaseIcon> Offers
+              <BriefcaseIcon className="menuicon"></BriefcaseIcon>Offers
             </Link>
             <Link to="/products">
-              <ArchiveBoxIcon className="menuicon"></ArchiveBoxIcon> Products
+              <ArchiveBoxIcon className="menuicon"></ArchiveBoxIcon>Products
             </Link>
             <Link to="/orders">
-              <ArrowPathIcon className="menuicon"></ArrowPathIcon> Orders
+              <ArrowPathIcon className="menuicon"></ArrowPathIcon>Orders
             </Link>
           </div>
           <div className="profileMenu">

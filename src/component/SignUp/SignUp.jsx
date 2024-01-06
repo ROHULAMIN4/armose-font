@@ -3,21 +3,33 @@ import {
   LockClosedIcon,
   UserIcon,
   EnvelopeIcon,
+  PhotoIcon,
 } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./SignUp.css";
 import Swal from "sweetalert2";
 import AuthProver, { AuthContex } from "../provider/AuthProver";
+
 const SignUp = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState("");
   const { createUser, googleSingIn, githubSignIn } = useContext(AuthContex);
   const handleSingUp = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
     const password = form.password.value;
     const confirm = form.Confirm.value;
+
+    const userinfo = {
+      name: name,
+      email: email,
+      photoURL: photoURL,
+      password: password,
+    };
     // console.log(email, password, confirm);
     setError("");
     if (password !== confirm) {
@@ -40,16 +52,37 @@ const SignUp = () => {
 
       return;
     }
+
     createUser(email, password)
       .then((result) => {
         const loggUser = result.user;
-        console.log(loggUser);
+
+        fetch("http://localhost:5000/user", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(userinfo),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Armose SignUp successfully",
+                showConfirmButton: false,
+                timer: 1000,
+              });
+              navigate("/");
+            }
+          });
       })
       .catch((error) => {
         alert(error.message);
         setError(error.message);
       });
   };
+
+  // google sign in method
   const handleGoogleSingIn = () => {
     googleSingIn()
       .then((result) => {
@@ -95,6 +128,21 @@ const SignUp = () => {
 
               <div className="input-div one">
                 <div className="i">
+                  <UserIcon></UserIcon>
+                </div>
+                <div className="div">
+                  <h5></h5>
+                  <input
+                    type="text"
+                    className="input"
+                    name="name"
+                    required
+                    placeholder="Name"
+                  />
+                </div>
+              </div>
+              <div className="input-div one">
+                <div className="i">
                   <EnvelopeIcon></EnvelopeIcon>
                 </div>
                 <div className="div">
@@ -105,6 +153,20 @@ const SignUp = () => {
                     name="email"
                     required
                     placeholder="Email"
+                  />
+                </div>
+              </div>
+              <div className="input-div one">
+                <div className="i">
+                  <PhotoIcon></PhotoIcon>
+                </div>
+                <div className="div">
+                  <h5></h5>
+                  <input
+                    type="text"
+                    className="input"
+                    name="photoURL"
+                    placeholder="PhotoURL"
                   />
                 </div>
               </div>
