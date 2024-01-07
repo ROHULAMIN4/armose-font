@@ -57,7 +57,7 @@ const Menubar = () => {
           </div>
           <div className="profileMenu">
             {user ? (
-              <Link to="/setting">
+              <Link to="/dashboard">
                 <img
                   className="profile-img"
                   src={

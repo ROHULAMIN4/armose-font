@@ -4,6 +4,7 @@ import {
   UserIcon,
   EnvelopeIcon,
   PhotoIcon,
+  PhoneIcon,
 } from "@heroicons/react/24/solid";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -23,12 +24,14 @@ const SignUp = () => {
     const photoURL = form.photoURL.value;
     const password = form.password.value;
     const confirm = form.Confirm.value;
+    const phone = form.phone.value;
 
     const userinfo = {
       name: name,
       email: email,
       photoURL: photoURL,
       password: password,
+      phone: phone,
     };
     // console.log(email, password, confirm);
     setError("");
@@ -87,7 +90,26 @@ const SignUp = () => {
     googleSingIn()
       .then((result) => {
         const loggUser = result.user;
-        console.log(loggUser);
+        // start
+
+        const saverUser = {
+          name: loggUser.displayName,
+          email: loggUser.email,
+        };
+        fetch("http://localhost:5000/user", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(saverUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            // if (data.insertedId) {
+            navigate("/");
+            // }
+          });
+
+        // end
+        console.log(saverUser);
       })
       .catch((error) => {
         alert(error.message);
@@ -153,6 +175,21 @@ const SignUp = () => {
                     name="email"
                     required
                     placeholder="Email"
+                  />
+                </div>
+              </div>
+              <div className="input-div one">
+                <div className="i">
+                  <PhoneIcon></PhoneIcon>
+                </div>
+                <div className="div">
+                  <h5></h5>
+                  <input
+                    type="text"
+                    className="input"
+                    name="phone"
+                    required
+                    placeholder="contact Number"
                   />
                 </div>
               </div>

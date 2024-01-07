@@ -17,7 +17,12 @@ import Login from "./component/Login/Login.jsx";
 import SignUp from "./component/SignUp/SignUp.jsx";
 import AuthProver from "./component/provider/AuthProver.jsx";
 import PrivateRoutes from "./routes/PrivateRoutes.jsx";
-import Seeing from "./component/Setting/Seeing.jsx";
+import DashboardHome from "./component/Dashboard/DashboaradHome/Dashboard.jsx";
+import UserHome from "./component/Dashboard/UserHome/UserHome.jsx";
+import Contact from "./component/Dashboard/Contact/Contact.jsx";
+import MyOrdered from "./component/Dashboard/MyOrdered/MyOrdered.jsx";
+import MyOrdereds from "./component/Dashboard/MyOrdereds/MyOrdereds.jsx";
+import UpadateProfile from "./component/Dashboard/UpadateProfile/UpadateProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,14 +37,15 @@ const router = createBrowserRouter([
         path: "offers",
         element: <Offer></Offer>,
       },
-      {
-        path: "setting",
-        element: <Seeing></Seeing>,
-      },
+
       {
         path: "revireItem",
         element: <Orders></Orders>,
       },
+      // {
+      //   path: "dashboard",
+      //   element: <Dashboard></Dashboard>,
+      // },
       {
         path: "checkout",
         element: (
@@ -63,11 +69,40 @@ const router = createBrowserRouter([
         // loader: () => fetch("products.json"),
         loader: () => cartProductLoder(),
       },
-      // cart is not iterable problem dekhay
-      // {
-      //   path: "menucart",
-      //   element: <Cart></Cart>,
-      // },
+    ],
+  },
+
+  // start
+
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoutes>
+        <DashboardHome></DashboardHome>
+      </PrivateRoutes>
+    ),
+    children: [
+      // normal user routes
+      {
+        path: "userHome",
+        element: <UserHome></UserHome>,
+      },
+      {
+        path: "dashboard",
+        element: <DashboardHome></DashboardHome>,
+      },
+      {
+        path: "contacts",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "myordered",
+        element: <MyOrdereds></MyOrdereds>,
+      },
+      {
+        path: "updateprofile",
+        element: <UpadateProfile></UpadateProfile>,
+      },
     ],
   },
 ]);

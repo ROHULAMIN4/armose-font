@@ -36,10 +36,42 @@ const Login = () => {
         setError(error.message);
       });
   };
+  // const handleGoogleSingIn = () => {
+  //   googleSingIn()
+  //     .then((result) => {
+  //       const loggUser = result.user;
+  //       console.log(loggUser);
+  //     })
+  //     .catch((error) => {
+  //       alert(error.message);
+  //       setError(error.message);
+  //     });
+  // };
+
   const handleGoogleSingIn = () => {
     googleSingIn()
       .then((result) => {
         const loggUser = result.user;
+        // start
+
+        const saverUser = {
+          name: loggUser.displayName,
+          email: loggUser.email,
+          photoURL: loggUser.photoURL,
+        };
+        fetch("http://localhost:5000/user", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(saverUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            // if (data.insertedId) {
+            nativate(from, { replace: true });
+            // }
+          });
+
+        // end
         console.log(loggUser);
       })
       .catch((error) => {
